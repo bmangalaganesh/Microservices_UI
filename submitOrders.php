@@ -9,7 +9,10 @@ $ordersAppName = str_replace("-ui", "-orders-api", $ordersAppName);
 $applicationURI = $application_json["application_uris"][0];
 $ordersHost = substr_replace($applicationURI, $ordersAppName, 0, strlen($applicationName));
 $ordersRoute = "http://" . $ordersHost;
-$ordersURL = $ordersRoute . "/rest/orders";
+
+//$ordersURL = $ordersRoute . "/rest/orders";
+//Harcode the Orders URL
+$ordersURL = "https://microservicesorders.azurewebsites.net/rest/orders";
 
 echo "\r\nordersURL:" . $ordersURL;   
 
