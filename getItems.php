@@ -16,8 +16,12 @@ function RetrieveItems()
     echo "\r\ncatalogHost:" . $catalogHost;    
     $catalogRoute = "http://" . $catalogHost;
     echo "\r\ncatalogRoute:" . $catalogRoute;    
-    $url = $catalogRoute . "/items";
-
+    //$url = $catalogRoute . "/items";
+    $url = "https://microservicescatalog.azurewebsites.net/items";
+    //Hardcode the assignment of URL for catalogue
+    echo "\r\ncatalog Items URL :" . $url; 
+   
+    
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
