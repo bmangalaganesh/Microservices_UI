@@ -14,7 +14,7 @@ $ordersRoute = "http://" . $ordersHost;
 //Harcode the Orders URL
 $ordersURL = "https://microservicesorders.azurewebsites.net/rest/orders";
 
-echo "\r\nordersURL:" . $ordersURL;   
+//echo "\r\nordersURL:" . $ordersURL;   
 
 function httpPost($data,$url)
 {
