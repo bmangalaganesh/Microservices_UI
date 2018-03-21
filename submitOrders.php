@@ -11,6 +11,8 @@ $ordersHost = substr_replace($applicationURI, $ordersAppName, 0, strlen($applica
 $ordersRoute = "http://" . $ordersHost;
 $ordersURL = $ordersRoute . "/rest/orders";
 
+echo "\r\nordersURL:" . $ordersURL;   
+
 function httpPost($data,$url)
 {
 	$ch = curl_init();
