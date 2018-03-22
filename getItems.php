@@ -4,22 +4,23 @@ function RetrieveItems()
 {
     //echo "\r\n**************************************";
     $application = getenv("VCAP_APPLICATION");
-    echo "\r\napplication:" . $application;
+    //echo "\r\napplication:" . $application;
     $application_json = json_decode($application, true);
     $applicationURI = $application_json["application_uris"][0];
-    echo "\r\napplicationURI:" . $applicationURI;
+    //echo "\r\napplicationURI:" . $applicationURI;
     if (substr( $applicationURI, 0, 3 ) === "ui-") {
         $catalogHost = "catalog-api-" . substr($applicationURI, 3);
     } else {
         $catalogHost = str_replace("-ui-", "-catalog-api-", $applicationURI);
     }
-    echo "\r\ncatalogHost:" . $catalogHost;    
+    //echo "\r\ncatalogHost:" . $catalogHost;    
     $catalogRoute = "http://" . $catalogHost;
-    echo "\r\ncatalogRoute:" . $catalogRoute;    
+    //echo "\r\ncatalogRoute:" . $catalogRoute;    
     //$url = $catalogRoute . "/items";
     $url = "https://microservicescatalog.azurewebsites.net/items";
     //Hardcode the assignment of URL for catalogue
-    echo "\r\ncatalog Items URL :" . $url; 
+    //Trying to get the echo (on the JS console instead of the UI output)
+    echo "<div display='none'><script type='text/javascript'>console.log('console log message', $url)</script></div>";
    
     
     $curl = curl_init();
