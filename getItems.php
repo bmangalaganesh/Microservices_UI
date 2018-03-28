@@ -4,7 +4,8 @@ function RetrieveItems()
 {
     //echo "\r\n**************************************";
     $application = getenv("VCAP_APPLICATION");
-    echo "\r\napplication:" . $application;
+    echo "\r\n Azure App Migration Audit Comment:";
+    //echo "\r\napplication:" . $application;
     $application_json = json_decode($application, true);
     $applicationURI = $application_json["application_uris"][0];
     //echo "\r\napplicationURI:" . $applicationURI;
